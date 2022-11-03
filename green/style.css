@@ -123,13 +123,13 @@ section {
     }
 }
 .l1 {
-    background: url("../images/IMG_1459.JPG");
+    background: url("images/IMG_1459.JPG");
 }
 .l2 {
-    background: url("../images/IMG_1460.JPG");
+    background: url("images/IMG_1460.JPG");
 }
 .l3 {
-    background: url("../images/IMG_1464.JPG");
+    background: url("images/IMG_1464.JPG");
 }
 .l1, .l2, .l3 {
     position: relative;
