@@ -1,0 +1,161 @@
+:root {
+    --bg-col: #123;
+    --fg-col: lime;
+    --l-col: black;
+    --h-col: silver;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    box-sizing: border-box;
+    list-style: none;
+}
+h1, h2 {
+    text-shadow: 2px 2px green;
+}
+h2 {
+    padding-bottom: 8px;
+}
+body {
+    color: var(--fg-col);
+    background-color: var(--bg-col);
+    background: linear-gradient(to bottom right, #123, #246, #123);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    
+}
+header, footer {
+    width: 100%;
+    height: fit-content;
+    padding: 0.8rem;
+    text-align: center;
+    background-color: var(--l-col);
+
+    box-shadow: 0 0px 5px var(--fg-col);
+}
+header a {
+    text-decoration: none;
+    color: var(--fg-col);
+}
+nav {  
+    position: sticky;
+    top: 0px;
+    height: 2.5rem;
+    padding: 0.6rem;  
+    
+    text-align: center;
+
+    z-index: 5;
+}
+nav ul, footer ul {
+    display: inline-block;
+}
+nav ul a, footer ul a {
+    margin: 0.5rem;
+    padding: 0.1rem 1rem;
+    background-color: var(--l-col);
+    color: var(--fg-col);
+    
+
+    text-align: center;
+    border: 2px solid rgb(100, 100, 100);
+    box-shadow: 2px 2px gray;
+    transition: background-color 2s, color 1.7s;
+}
+nav ul a:hover, footer ul a:hover {
+    background-color: var(--fg-col);
+    color: var(--l-col);
+    
+}
+section {
+    width: 95%;
+    margin: 0.4rem auto;
+    padding: 1rem;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+.in3 {
+    text-align: left;
+}
+.in3 h4 {
+    text-shadow: 1px 1px var(--l-col);
+}
+.in3 ul {
+    width: 100%;
+    padding: 0;
+    margin: 0rem;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.in3 li {
+    width: 33.3%;
+    height: 400px;
+    margin: 0.5rem;
+    padding: 0rem 0.4rem;
+
+    border: 2px solid rgb(100, 100, 100);
+    box-shadow: 2px 2px gray;
+
+    transition: 1.2s;
+}
+@media screen and (min-width: 421px) {
+    .in3 li:hover {
+        transform: scale(1.2);    
+        z-index: 1;
+    }    
+}
+@media screen and (max-width: 420px) {     
+    .in3 ul {
+        display: inline-block;
+    }
+    .in3 li {
+        width: 100%;
+        height: 200px;
+        margin: 0.5rem 0;
+        padding: 0;
+
+    }
+    .in3 {
+        padding: 0.4rem auto;
+    }
+}
+.l1 {
+    background: url("../images/IMG_1459.JPG");
+}
+.l2 {
+    background: url("../images/IMG_1460.JPG");
+}
+.l3 {
+    background: url("../images/IMG_1464.JPG");
+}
+.l1, .l2, .l3 {
+    position: relative;
+    background-clip: padding-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.listButton {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    padding: 0.1rem 0.2rem;
+
+    background-color: var(--h-col);
+}
+footer * {
+    padding: 0.3rem;
+}
+footer li {
+    margin-bottom: 0.5rem;
+}
+@media screen and (min-width:421px) {
+    footer ul {
+        display: inline-flex;
+    }
+}
+
+

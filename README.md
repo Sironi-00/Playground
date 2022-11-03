@@ -5,6 +5,7 @@ Pure Web experiments
 
 #https://sironi-00.github.io/Playground/isDots/
 
-#https://sironi-00.github.io/Playground/isDay/
 
 #https://sironi-00.github.io/Playground/circlelic/
+
+#https://sironi-00.github.io/Playground/green/
