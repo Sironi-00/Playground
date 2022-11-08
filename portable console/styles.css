@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #000;
+}
+.container {
+    background-color: #00F;
+    width: 1000px;
+    height: 700px;
+    margin-inline: auto;
+}
+.container:nth-of-type(1) {
+    background: url("images/playstation-nintendo-switch-1222479.webp");
+    background-position: center;
+}.container:nth-of-type(2) {
+    background: url("images/steam-deck-main.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
