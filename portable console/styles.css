@@ -1,5 +1,4 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -10,14 +9,59 @@ body {
     background-color: #00F;
     width: 1000px;
     height: 700px;
-    margin-inline: auto;
+    margin: 0px auto;
+    position: relative;
 }
 .container:nth-of-type(1) {
     background: url("images/playstation-nintendo-switch-1222479.webp");
+    background-size: contain;
     background-position: center;
 }.container:nth-of-type(2) {
     background: url("images/steam-deck-main.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.container * {
+    position: absolute;
+    border: 5px solid black;
+}
+.frame {
+    background: #FFF4;
+    border: 2px solid #000;
+    width: 90%;
+    height: 70%;
+    /* top:15%; */
+    top: 1%;
+    left: 5%;
+    border-radius: 30px;
+}
+.left {
+    /* background: #00F; */
+    width: 25%;
+    height: 100%;
+    border-radius: 30px 0 0 30px;
+    top: 0;
+    left: 0;
+}
+.minus {
+    top: 10%;
+    right: 5%;
+    width: 10%;
+    height: 2%;
+}
+.stick {
+    top: 20%;
+    left: 25%;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+}
+.dpad {
+    top: 50%;
+    left: 25%;
+    width: vw;
+    height: 5vw;
+    border-top: 2.5vw solid white;
+    border-radius: 50%;
 }
