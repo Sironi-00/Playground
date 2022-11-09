@@ -1,3 +1,10 @@
+:root {
+    --frame: #444;
+    --bg: #000;
+    --fg: #FFF;
+    --left-con: #00F;
+    --right-con: #F00;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,69 +14,63 @@ body {
     background-color: #000;
 }
 .container {
-    background-color: #00F;
+    background-color: var(--fg);
     width: 1000px;
     height: 700px;
-    margin: 0px auto;
+    margin: 25px auto;
     position: relative;
 }
-.container:nth-of-type(1) {
-    background: url("images/playstation-nintendo-switch-1222479.webp");
-    background-size: contain;
-    background-position: center;
-}.container:nth-of-type(2) {
-    background: url("images/steam-deck-main.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+.container h1 {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    border: 0;
+    color: var(--left-con);
+    text-shadow: 2px 2px 0 var(--right-con);
 }
 .container * {
     position: absolute;
-    border: 4px solid black;
+    border: 4px solid var(--bg);
 }
 .frame {
-    background: #FFF4;
-    border: 2px solid #000;
+    background: var(--frame);
     width: 90%;
-    height: 70%;
-    top:15%;
+    height: 55%;
+    top: 15%;
     left: 5%;
     border-radius: 30px;
 }
-.left {
-    background: #00F;
-    width: 25%;
-    height: 100%;
-    border-radius: 30px 0 0 30px;
-    top: 0;
-    left: 0;
+.joycon {
+    width: 20%;
+    height: 102%;
+    top: -1%;
     z-index: 1;
 }
-.right {
-    background: #F00;
-    width: 25%;
-    height: 100%;
+.joycon.left {
+    background: var(--left-con);
+    border-radius: 30px 0 0 30px;
+    left: -1%;
+}
+.joycon.right {
+    background: var(--right-con);
     border-radius: 0 30px 30px 0;
-    top: 0;
-    right: 0;
-    z-index: 1;
+    right: -1%;
 }
 .trigger {
     width: 15%;
-    height: 5%;
-    background: #FFF;
+    height: 10%;
+    top: -1.7%;
+    background: var(--frame);
     border: 0;
     z-index: 0;
 }
 .left.trigger {
-    top: -1%;
-    left: -0%;
-    border-radius: 20px 0 0 0;
+    left: -1.2%;
+    border-radius: 20px 5px;
 }
 .right.trigger {
-    top: -1%;
-    right: -0%;
-    border-radius: 0 20px 0 0;
+    right: -1.2%;
+    border-radius: 5px 20px;
 }
 .sign {    
     top: 10%;
@@ -77,68 +78,80 @@ body {
     height: 2%;
 }
 .left .sign {
-    right: 5%;
+    right: 20%;
 }
 .right .sign {
-    left: 5%;
+    left: 20%;
 }
 .stick {
-    width: 5vw;
-    height: 5vw;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
+    background-color: var(--bg);
+    border: 6px solid var(--fg);
 }
 .left .stick {
     top: 20%;
-    left: 25%;
+    left: 30%;
 }
 .right .stick {
-    top: 50%;
-    right: 25%;
+    top: 55%;
+    right: 30%;
 }
-.dpad {
+.fourway-btn {
     width: 5vw;
     height: 5vw;
     border: 0;
 }
-.left .dpad {
+.left .fourway-btn {
     top: 50%;
     left: 25%;
 }
-.right .dpad {
+.right .fourway-btn {
     top: 20%;
     right: 25%;
 }
 .button {
-    background: #000;
-    color: #FFF;
+    background-color: var(--bg);
+    color: var(--fg);
+    border: 2px solid var(--frame);
     border-radius: 50%;
     width: 1.7vw;
     height: 1.7vw;
-}
-.dpad .button {
     text-align: center;
 }
-.dpad .up {
+.fourway-btn .up {
     top: 0;
     left: 30%;
 }
-.dpad .right {
+.fourway-btn .right {
     right: 0%;
     top: 30%;
 }
-.dpad .down {
+.fourway-btn .down {
     bottom: 0%;
     left:30%;
 }
-.dpad .left {
+.fourway-btn .left {
     top: 30%;
     left: 0;
 }
-.left .button.record {
+.left .button.system {
     top: 80%;
     left: 60%;
 }
-.right .button.record {
+.right .button.system {
     top: 80%;
     right: 60%;
+}
+.screen {
+    width: 61%;
+    height: 97%;
+    top: 1.5%;
+    left: 19.5%;
+    border: 10px solid var(--bg);
+    background-color: var(--fg);
+    background: url("images/nintendo-switch-1222479.webp");
+    background-position: center;
+    background-size: 130%;
 }
