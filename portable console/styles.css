@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -24,44 +25,120 @@ body {
 }
 .container * {
     position: absolute;
-    border: 5px solid black;
+    border: 4px solid black;
 }
 .frame {
     background: #FFF4;
     border: 2px solid #000;
     width: 90%;
     height: 70%;
-    /* top:15%; */
-    top: 1%;
+    top:15%;
     left: 5%;
     border-radius: 30px;
 }
 .left {
-    /* background: #00F; */
+    background: #00F;
     width: 25%;
     height: 100%;
     border-radius: 30px 0 0 30px;
     top: 0;
     left: 0;
+    z-index: 1;
 }
-.minus {
+.right {
+    background: #F00;
+    width: 25%;
+    height: 100%;
+    border-radius: 0 30px 30px 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.trigger {
+    width: 15%;
+    height: 5%;
+    background: #FFF;
+    border: 0;
+    z-index: 0;
+}
+.left.trigger {
+    top: -1%;
+    left: -0%;
+    border-radius: 20px 0 0 0;
+}
+.right.trigger {
+    top: -1%;
+    right: -0%;
+    border-radius: 0 20px 0 0;
+}
+.sign {    
     top: 10%;
-    right: 5%;
     width: 10%;
     height: 2%;
 }
+.left .sign {
+    right: 5%;
+}
+.right .sign {
+    left: 5%;
+}
 .stick {
-    top: 20%;
-    left: 25%;
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
 }
+.left .stick {
+    top: 20%;
+    left: 25%;
+}
+.right .stick {
+    top: 50%;
+    right: 25%;
+}
 .dpad {
+    width: 5vw;
+    height: 5vw;
+    border: 0;
+}
+.left .dpad {
     top: 50%;
     left: 25%;
-    width: vw;
-    height: 5vw;
-    border-top: 2.5vw solid white;
+}
+.right .dpad {
+    top: 20%;
+    right: 25%;
+}
+.button {
+    background: #000;
+    color: #FFF;
     border-radius: 50%;
+    width: 1.7vw;
+    height: 1.7vw;
+}
+.dpad .button {
+    text-align: center;
+}
+.dpad .up {
+    top: 0;
+    left: 30%;
+}
+.dpad .right {
+    right: 0%;
+    top: 30%;
+}
+.dpad .down {
+    bottom: 0%;
+    left:30%;
+}
+.dpad .left {
+    top: 30%;
+    left: 0;
+}
+.left .button.record {
+    top: 80%;
+    left: 60%;
+}
+.right .button.record {
+    top: 80%;
+    right: 60%;
 }
