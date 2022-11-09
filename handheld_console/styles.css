@@ -84,8 +84,8 @@ body {
     left: 20%;
 }
 .stick {
-    width: 4vw;
-    height: 4vw;
+    width: max(4vw, 70px);
+    height: max(4vw, 70px);
     border-radius: 50%;
     background-color: var(--bg);
     border: 6px solid var(--fg);
@@ -99,8 +99,8 @@ body {
     right: 30%;
 }
 .fourway-btn {
-    width: 5vw;
-    height: 5vw;
+    width: max(5vw, 90px);
+    height: max(5vw, 90px);
     border: 0;
 }
 .left .fourway-btn {
@@ -116,8 +116,8 @@ body {
     color: var(--fg);
     border: 2px solid var(--frame);
     border-radius: 50%;
-    width: 1.7vw;
-    height: 1.7vw;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
 .fourway-btn .up {
