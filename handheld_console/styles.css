@@ -167,13 +167,3 @@ body {
         scale: 1.5;
     }    
 }
-@media screen and (min-width: 2000px) {
-    body {
-        scale: 2;
-    }    
-}
-@media screen and (min-width: 2500px) {
-    body {
-        scale: 2.5;
-    }    
-} */
