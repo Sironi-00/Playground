@@ -4,6 +4,8 @@
     --fg: #FFF;
     --left-con: #00F;
     --right-con: #F00;
+
+    --corner: 60px;
 }
 * {
     box-sizing: border-box;
@@ -38,7 +40,7 @@ body {
     height: 55%;
     top: 15%;
     left: 5%;
-    border-radius: 30px;
+    border-radius: var(--corner);
 }
 .joycon {
     width: 20%;
@@ -48,29 +50,29 @@ body {
 }
 .joycon.left {
     background: var(--left-con);
-    border-radius: 30px 0 0 30px;
+    border-radius: var(--corner) 0 0 var(--corner);
     left: -1%;
 }
 .joycon.right {
     background: var(--right-con);
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 var(--corner) var(--corner) 0;
     right: -1%;
 }
 .trigger {
     width: 15%;
-    height: 10%;
-    top: -1.7%;
+    height: 15%;
+    top: -2%;
     background: var(--frame);
     border: 0;
     z-index: 0;
 }
 .left.trigger {
     left: -1.2%;
-    border-radius: 20px 5px;
+    border-radius: var(--corner) 5px;
 }
 .right.trigger {
     right: -1.2%;
-    border-radius: 5px 20px;
+    border-radius: 5px var(--corner);
 }
 .sign {    
     top: 10%;
@@ -92,11 +94,11 @@ body {
 }
 .left .stick {
     top: 20%;
-    left: 30%;
+    left: 25%;
 }
 .right .stick {
     top: 55%;
-    right: 30%;
+    right: 25%;
 }
 .fourway-btn {
     width: max(5vw, 90px);
@@ -105,19 +107,19 @@ body {
 }
 .left .fourway-btn {
     top: 50%;
-    left: 25%;
+    left: 20%;
 }
 .right .fourway-btn {
     top: 20%;
-    right: 25%;
+    right: 20%;
 }
 .button {
     background-color: var(--bg);
     color: var(--fg);
     border: 2px solid var(--frame);
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     text-align: center;
 }
 .fourway-btn .up {
@@ -155,3 +157,23 @@ body {
     background-position: center;
     background-size: 130%;
 }
+/* @media screen and (min-width: 500px) {
+    body {
+        scale: 0.5;
+    }    
+}
+@media screen and (min-width: 1500px) {
+    body {
+        scale: 1.5;
+    }    
+}
+@media screen and (min-width: 2000px) {
+    body {
+        scale: 2;
+    }    
+}
+@media screen and (min-width: 2500px) {
+    body {
+        scale: 2.5;
+    }    
+} */
