@@ -2,10 +2,15 @@
     --frame: #444;
     --bg: #000;
     --fg: #FFF;
-    --left-con: #00F;
-    --right-con: #F00;
+    /* --left-con: #00F;
+    --right-con: #F00; */
+
+    /* from https://www.designpieces.com/palette/nintendo-switch-brand-colours-hex-and-rgb/ + minor adjustments */
+    --right-con: #ff3040;
+    --left-con: #00ceee;
 
     --corner: 60px;
+    --temp-screen: url("images/nintendo-switch-1222479.webp");
 }
 * {
     box-sizing: border-box;
@@ -64,7 +69,6 @@ body {
     top: -2%;
     background: var(--frame);
     border: 0;
-    z-index: 0;
 }
 .left.trigger {
     left: -1.2%;
@@ -73,6 +77,30 @@ body {
 .right.trigger {
     right: -1.2%;
     border-radius: 5px var(--corner);
+}
+.power {
+    width: 4%;
+    height: 2%;
+    border-radius: 10%;
+    border-color: var(--bg);
+    top: -2.5%;
+    left: 20%;
+}
+.volume {
+    width: 8%;
+    height: 1%;
+    top: -2%;
+    left: 27%;
+    z-index: 1;
+    border: 0;
+    border-radius: 10%;
+    border-top: 2px  solid #0000;
+    border-left: 35px  solid var(--frame);
+    border-right: 35px  solid var(--frame);
+}
+.btns:hover {
+    cursor: pointer;
+    scale: 1.2;
 }
 .sign {    
     top: 10%;
@@ -153,7 +181,7 @@ body {
     left: 19.5%;
     border: 10px solid var(--bg);
     background-color: var(--fg);
-    background: url("images/nintendo-switch-1222479.webp");
+    background: var(--temp-screen);
     background-position: center;
     background-size: 130%;
 }
