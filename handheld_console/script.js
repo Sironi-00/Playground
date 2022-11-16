@@ -1,11 +1,10 @@
-// screen should desplay something 
-// buttons have function 
+// screen should desplay something
+// buttons have function
 // buttons mapped to keys
 // power button
 // ? dettachable joycons
 
 // switch between R&B and B&W
-
 
 id = `
 id="power"
@@ -29,27 +28,46 @@ id="y"
 id="sys-home"
 `;
 function main() {
-    let power = document.getElementById("power");
-    let volume = document.getElementById("volume");
+  // sys btn
+  let power = document.getElementById("power");
+  let volume = document.getElementById("volume");
+  let screen = document.getElementById("screen");
+  // triggers
+  let lTrigger = document.getElementById("ltrigger");
+  let rTrigger = document.getElementById("rtrigger");
+  // sticks
+  let lStick = document.getElementById("lstick");
+  let rStick = document.getElementById("rstick");
+  // face btns
+  let minus = document.getElementById("minus");
+  let plus = document.getElementById("plus");
+  let sysRec = document.getElementById("sys-rec");
+  let sysHome = document.getElementById("sys-home");
+  // D-pad
+  let up = document.getElementById("up");
+  let right = document.getElementById("right");
+  let down = document.getElementById("down");
+  let left = document.getElementById("left");
+  // Action btns
+  let x = document.getElementById("x");
+  let a = document.getElementById("a");
+  let b = document.getElementById("b");
+  let y = document.getElementById("y");
 
-    let lTrigger = document.getElementById("ltrigger");
-    let rTrigger = document.getElementById("rtrigger");
-    let lStick = document.getElementById("lstick");
-    let rStick = document.getElementById("rstick");
 
-    let minus = document.getElementById("minus");
-    let plus = document.getElementById("plus");
-    let sysRec = document.getElementById("sys-rec");
-    let sysHome = document.getElementById("sys-home");
+  ////////////////////////////////////
 
-    let up = document.getElementById("up");
-    let right = document.getElementById("right");
-    let down = document.getElementById("down");
-    let left = document.getElementById("left");
+  let power_state = true;
+  let switched = () => {
+      if (power_state) {
+        screen.style.background = "#000";
+        power_state = !power_state;
+    } else {
+        screen.style.background = "";
+        power_state = !power_state;
+    }
+  };
+  power.addEventListener("click", switched);
 
-    let x = document.getElementById("x");
-    let a = document.getElementById("a");
-    let b = document.getElementById("b");
-    let y = document.getElementById("y");
 }
 main();
