@@ -10,7 +10,6 @@
     --left-con: #00a0ff;
 
     --corner: 60px;
-    --temp-screen: url("images/nintendo-switch-1222479.webp");
 }
 * {
     box-sizing: border-box;
@@ -181,9 +180,6 @@ body {
     left: 19.5%;
     border: 10px solid var(--bg);
     background-color: var(--fg);
-    background: var(--temp-screen);
-    background-position: center;
-    background-size: 130%;
 }
 /* @media screen and (min-width: 500px) {
     body {
@@ -195,3 +191,25 @@ body {
         scale: 1.5;
     }    
 }*/
+.stage {
+    width: 100%;
+    height: 100%;
+
+}
+.stage * {
+    position: relative;
+    border: 0;
+}
+.row {
+    width: 100%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+}
+.pixel {
+    background-color: lime;
+    margin: 2%;
+}
+.selected {
+    border: 2px solid var(--bg);
+}

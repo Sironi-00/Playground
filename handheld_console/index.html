@@ -1,52 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Handheld Gaming Console</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <a href="images/nintendo-switch-1222479.webp">Nintendo</a>
-    <a href="https://oyster.ignimgs.com/wordpress/stg.ign.com/2016/12/Switch-Labels-Joy-Con-Grip-Controller-Large.png">nin label</a>
+    <a
+      href="https://oyster.ignimgs.com/wordpress/stg.ign.com/2016/12/Switch-Labels-Joy-Con-Grip-Controller-Large.png"
+      >nin label</a
+    >
     <a href="images/steam-deck-main.webp">Steam deck</a>
-    <a href="https://www.chillblast.com/learn/wp-content/uploads/2022/04/steam-deck-blueprint.jpg">Steam label</a>
+    <a
+      href="https://www.chillblast.com/learn/wp-content/uploads/2022/04/steam-deck-blueprint.jpg"
+      >Steam label</a
+    >
     <div class="container">
-        <h1>Nintendo Switch</h1>
-        <div class="frame">
-            <div id="power" class="power btns" title="Power"></div>
-            <div id="volume" class="volume btns" title="Volume"></div>
-            <div id="ltrigger" class="left trigger" title="Left Trigger"></div>
-            <div class="joycon left" >
-                <div id="minus" class="sign btns" title="Minus"></div>
-                <div id="lstick" class="stick"></div>
-                <div class="fourway-btn">
-                    <div id="up" class="button up">w</div>
-                    <div id="right" class="button right">d</div>
-                    <div id="down" class="button down">s</div>
-                    <div id="left" class="button left">a</div>
-                </div>
-                <div id="sys-rec" class="button system" title="Record">R</div>
-            </div>
-            <div id="screen" class="screen" title="Screen">
-                <!-- Screen -->
-            </div>
-            <div id="rtrigger" class="right trigger" title="Right Trigger"></div>
-            <div class="joycon right">
-                <div id="plus" class="sign btns" title="Plus"></div>
-                <div id="rstick" class="stick"></div>
-                <div class="fourway-btn">
-                    <div id="x" class="button up">X</div>
-                    <div id="a" class="button right">A</div>
-                    <div id="b" class="button down">B</div>
-                    <div id="y" class="button left">Y</div>
-                </div>
-                <div id="sys-home" class="button system" title="Home">H</div>
-            </div>
+      <h1>Nintendo Switch</h1>
+      <div class="frame">
+        <div id="power" class="power btns" title="Power"></div>
+        <div id="volume" class="volume btns" title="Volume"></div>
+        <div id="ltrigger" class="left trigger" title="Left Trigger"></div>
+        <div class="joycon left">
+          <div id="minus" class="sign btns" title="Minus"></div>
+          <div id="lstick" class="stick"></div>
+          <div class="fourway-btn">
+            <div id="up" class="button up">w</div>
+            <div id="right" class="button right">d</div>
+            <div id="down" class="button down">s</div>
+            <div id="left" class="button left">a</div>
+          </div>
+          <div id="sys-rec" class="button system" title="Record">R</div>
         </div>
+        <div id="screen" class="screen" title="Screen">
+          <!-- Screen -->
+          <div class="stage">
+            <div class="row">
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+            </div>
+            <div class="row">
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+            </div>
+            <div class="row">
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel selected"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+            </div>
+            <div class="row">
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+            </div>
+            <div class="row">
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+              <div class="pixel"></div>
+            </div>
+          </div>
+        </div>
+        <div id="rtrigger" class="right trigger" title="Right Trigger"></div>
+        <div class="joycon right">
+          <div id="plus" class="sign btns" title="Plus"></div>
+          <div id="rstick" class="stick"></div>
+          <div class="fourway-btn">
+            <div id="x" class="button up">X</div>
+            <div id="a" class="button right">A</div>
+            <div id="b" class="button down">B</div>
+            <div id="y" class="button left">Y</div>
+          </div>
+          <div id="sys-home" class="button system" title="Home">H</div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

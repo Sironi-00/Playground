@@ -56,7 +56,7 @@ function main() {
 
 
   ////////////////////////////////////
-
+  // Screen Power
   let power_state = true;
   let switched = () => {
       if (power_state) {
@@ -68,6 +68,18 @@ function main() {
     }
   };
   power.addEventListener("click", switched);
+  
+  //////////////////////////////
+  // pixels selector
+  let selected = document.getElementsByClassName("selected")
+  let pix_x = (0, 5);
+  let  pix_y = (0, 5);
 
+  let rw = document.getElementsByClassName("row");
+  let r1 = rw[0].document.getElementsByClassName("pixel");
+
+
+  let pix = document.getElementsByClassName("pixel");
+  pix[0].classList.toggle("selected");
 }
 main();
