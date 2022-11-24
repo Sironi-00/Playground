@@ -76,14 +76,14 @@ function main() {
   let pix_y = 2;
 
   let movePixel = (btn) => {
-    if (pix_x <= 0) {
-      pix_x = 4;
-    } else if (pix_x > 4) {
-      pix_x = 0;
-    }else if (pix_y <= 0) {
+    if (pix_y <= 0 & btn == "up") {
       pix_y = 4;
-    }else if (pix_y > 4) {
+    } else if (pix_x >= 4 & btn == "right") {
+      pix_x = 0;
+    }else if (pix_y >= 4 & btn == "down") {
       pix_y = 0;
+    }else if (pix_x <= 0 & btn == "left") {
+      pix_x = 4;
     } else {
       switch (btn) {
         case "up":
@@ -101,7 +101,7 @@ function main() {
       }
     }
 
-    console.log(pix_x, pix_y)
+    console.log(btn, pix_x, pix_y)
     let pix = document.getElementsByClassName(`pixel r${pix_y}`);
     pix[pix_x].classList.toggle("selected");
     console.log("*", pix_x, pix_y)
