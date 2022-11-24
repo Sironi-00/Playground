@@ -60,10 +60,12 @@ function main() {
   let switched = () => {
     if (power_state) {
       screen.style.background = "#000";
+      // remove screen elements by setting visibility to none
       document.documentElement.style.setProperty("--screen", "none");
       power_state = !power_state;
     } else {
       screen.style.background = "";
+      // resets screen elements
       document.documentElement.style.setProperty("--screen", "unset");
       power_state = !power_state;
     }
@@ -71,20 +73,26 @@ function main() {
   power.addEventListener("click", switched);
 
   //////////////////////////////
-  // pixels selector
+  // pixels selector axis
   let pix_x = 2;
   let pix_y = 2;
 
   let movePixel = (btn) => {
+    // btn represents direction keystroke
     if (pix_y <= 0 & btn == "up") {
+      //if axis < 0 switch to bottom 
       pix_y = 4;
     } else if (pix_x >= 4 & btn == "right") {
+      // if axis > 4 switch to left
       pix_x = 0;
     }else if (pix_y >= 4 & btn == "down") {
+      //if axis > 4 switch to top 
       pix_y = 0;
     }else if (pix_x <= 0 & btn == "left") {
+      // if axis < 0 switch to right
       pix_x = 4;
     } else {
+      // adjust axis by one pixel in relation to btn
       switch (btn) {
         case "up":
           pix_y--;
@@ -100,11 +108,11 @@ function main() {
           break;
       }
     }
-
-    console.log(btn, pix_x, pix_y)
+    // target pixel using grid y axis
     let pix = document.getElementsByClassName(`pixel r${pix_y}`);
+    // target pixel using grid x axis and toggle targeted pixel 
     pix[pix_x].classList.toggle("selected");
-    console.log("*", pix_x, pix_y)
+    
   };
 
   up.addEventListener("click", () => movePixel("up"));
