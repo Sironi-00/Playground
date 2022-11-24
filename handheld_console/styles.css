@@ -2,14 +2,14 @@
     --frame: #444;
     --bg: #000;
     --fg: #FFF;
-    /* --left-con: #00F;
-    --right-con: #F00; */
+    --hc: #00F;
 
     /* from https://www.designpieces.com/palette/nintendo-switch-brand-colours-hex-and-rgb/ + minor adjustments */
     --right-con: #ff3040;
     --left-con: #00a0ff;
 
     --corner: 60px;
+    --screen: unset;
 }
 * {
     box-sizing: border-box;
@@ -181,20 +181,12 @@ body {
     border: 10px solid var(--bg);
     background-color: var(--fg);
 }
-/* @media screen and (min-width: 500px) {
-    body {
-        scale: 0.5;
-    }    
+.screen * {
+    display: var(--screen);
 }
-@media screen and (min-width: 1500px) {
-    body {
-        scale: 1.5;
-    }    
-}*/
 .stage {
     width: 100%;
     height: 100%;
-
 }
 .stage * {
     position: relative;
@@ -204,12 +196,13 @@ body {
     width: 100%;
     height: 20%;
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(5, 20%);
 }
 .pixel {
-    background-color: lime;
-    margin: 2%;
+    background-color: var(--hc);
+    margin: 1px;
 }
 .selected {
-    border: 2px solid var(--bg);
+    border: 6px double var(--fg);
+    
 }
