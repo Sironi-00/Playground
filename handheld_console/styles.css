@@ -97,7 +97,7 @@ body {
     border-left: 35px  solid var(--bg);
     border-right: 35px  solid var(--bg);
 }
-.btns:hover {
+.btns:hover, .button:hover {
     cursor: pointer;
     scale: 1.2;
 }
@@ -128,8 +128,8 @@ body {
     right: 25%;
 }
 .fourway-btn {
-    width: max(5vw, 90px);
-    height: max(5vw, 90px);
+    width: max(5vw, 110px);
+    height: max(5vw, 110px);
     border: 0;
 }
 .left .fourway-btn {
@@ -145,8 +145,8 @@ body {
     color: var(--fg);
     border: 2px solid var(--frame);
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     text-align: center;
 }
 .fourway-btn .up {
