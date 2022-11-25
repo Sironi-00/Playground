@@ -87,15 +87,15 @@ body {
 }
 .volume {
     width: 8%;
-    height: 1%;
+    height: 2%;
     top: -2%;
     left: 27%;
     z-index: 1;
     border: 0;
     border-radius: 10%;
-    border-top: 2px  solid #0000;
-    border-left: 35px  solid var(--frame);
-    border-right: 35px  solid var(--frame);
+    border-top: 2px  solid var(--bg);
+    border-left: 35px  solid var(--bg);
+    border-right: 35px  solid var(--bg);
 }
 .btns:hover {
     cursor: pointer;
@@ -180,9 +180,11 @@ body {
     left: 19.5%;
     border: 10px solid var(--bg);
     background-color: var(--fg);
+    transition: background-color 0.5s;
 }
 .screen * {
     display: var(--screen);
+    transition: all 0.5s;
 }
 .stage {
     width: 99.6%;

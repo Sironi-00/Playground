@@ -6,28 +6,9 @@
 
 // switch between R&B and B&W
 
-id = `
-id="power"
-id="volume"
-id="ltrigger"
-id="minus"
-id="lstick"
-id="up"
-id="right"
-id="down"
-id="left"
-id="sys-rec"
-id="screen"
-id="rtrigger"
-id="plus"
-id="rstick"
-id="x"
-id="a"
-id="b"
-id="y"
-id="sys-home"
-`;
 function main() {
+  // console
+  let nintendo = document.getElementById("console");
   // sys btn
   let power = document.getElementById("power");
   let volume = document.getElementById("volume");
@@ -78,17 +59,18 @@ function main() {
   let pix_y = 2;
 
   let movePixel = (btn) => {
+    if (!power_state) return alert("Switch system ON first");
     // btn represents direction keystroke
-    if (pix_y <= 0 & btn == "up") {
-      //if axis < 0 switch to bottom 
+    if ((pix_y <= 0) & (btn == "up")) {
+      //if axis < 0 switch to bottom
       pix_y = 4;
-    } else if (pix_x >= 4 & btn == "right") {
+    } else if ((pix_x >= 4) & (btn == "right")) {
       // if axis > 4 switch to left
       pix_x = 0;
-    }else if (pix_y >= 4 & btn == "down") {
-      //if axis > 4 switch to top 
+    } else if ((pix_y >= 4) & (btn == "down")) {
+      //if axis > 4 switch to top
       pix_y = 0;
-    }else if (pix_x <= 0 & btn == "left") {
+    } else if ((pix_x <= 0) & (btn == "left")) {
       // if axis < 0 switch to right
       pix_x = 4;
     } else {
@@ -110,17 +92,40 @@ function main() {
     }
     // target pixel using grid y axis
     let pix = document.getElementsByClassName(`pixel r${pix_y}`);
-    // target pixel using grid x axis and toggle targeted pixel 
+    // target pixel using grid x axis and toggle targeted pixel
     pix[pix_x].classList.toggle("selected");
-    
   };
-
+  // Dpad btn to move pixel
   up.addEventListener("click", () => movePixel("up"));
   right.addEventListener("click", () => movePixel("right"));
   down.addEventListener("click", () => movePixel("down"));
   left.addEventListener("click", () => movePixel("left"));
-  screen.focus();
-  screen.addEventListener("keydown", (e)=> {
+
+  /////////////////////////////
+  // color changer
+  let cur_color = 0;
+  let colors = ["#FFF", "#F00", "#0F0", "#00F", "#000"];
+  let volume_state = true;
+  let color_pick = (sign) => {
+    // changes color of border
+    if ((cur_color < 0) & (sign == "-")) cur_color = colors.length - 1;
+    else if ((cur_color >= colors.length - 1) & (sign == "+")) cur_color = 0;
+    else sign == "+" ? cur_color++ : cur_color--;
+    let color_pointer = volume_state? "--sc": "--hc"
+    document.documentElement.style.setProperty(color_pointer, colors[cur_color]);
+  };
+
+  let volume_point = () => {
+    volume_state = volume_state? !volume_state: !volume_state
+  };
+  volume.addEventListener("click", volume_point);
+
+  minus.addEventListener("click", () => color_pick("-"));
+  plus.addEventListener("click", () => color_pick("+"));
+
+  // key events
+  nintendo.focus();
+  nintendo.addEventListener("keydown", (e) => {
     switch (e.key) {
       case "w":
         movePixel("up");
@@ -134,7 +139,13 @@ function main() {
       case "a":
         movePixel("left");
         break;
+      case "1":
+        color_pick("-");
+        break;
+      case "2":
+        color_pick("+");
+        break;
     }
-  })
+  });
 }
 main();
