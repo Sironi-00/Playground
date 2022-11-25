@@ -119,5 +119,22 @@ function main() {
   right.addEventListener("click", () => movePixel("right"));
   down.addEventListener("click", () => movePixel("down"));
   left.addEventListener("click", () => movePixel("left"));
+  screen.focus();
+  screen.addEventListener("keydown", (e)=> {
+    switch (e.key) {
+      case "w":
+        movePixel("up");
+        break;
+      case "d":
+        movePixel("right");
+        break;
+      case "s":
+        movePixel("down");
+        break;
+      case "a":
+        movePixel("left");
+        break;
+    }
+  })
 }
 main();
