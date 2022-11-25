@@ -210,3 +210,26 @@ body {
     border: 6px double var(--sc);
     
 }
+/* Guide */
+#guide {
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 25%;
+    padding: 1%;
+    overflow-y: auto;
+}
+#guide * {
+    position: relative;
+    border: 0;
+}
+#guide p span {
+    font-weight: bold;
+}
+#toggle-guide {
+    right: 0;
+    bottom: 0;
+    border: 0;
+    padding: 4px 6px;
+    box-shadow: 0 0 4px #000;
+}
