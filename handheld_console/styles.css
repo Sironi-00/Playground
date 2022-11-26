@@ -4,6 +4,7 @@
     --fg: #FFF;
     --hc: #00F;
     --sc: #FFF;
+    --screen-bg: #FFF;
     /* from https://www.designpieces.com/palette/nintendo-switch-brand-colours-hex-and-rgb/ + minor adjustments */
     --right-con: #ff3040;
     --left-con: #00a0ff;
@@ -181,7 +182,7 @@ body {
     top: 1.5%;
     left: 19.5%;
     border: 10px solid var(--bg);
-    background-color: var(--fg);
+    background-color: var(--screen-bg);
     transition: background-color 0.5s;
 }
 .screen * {

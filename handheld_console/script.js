@@ -113,6 +113,7 @@ function main() {
     else sign == "+" ? cur_color++ : cur_color--;
     let color_pointer = volume_state? "--sc": "--hc"
     document.documentElement.style.setProperty(color_pointer, colors[cur_color]);
+    document.documentElement.style.setProperty("--screen-bg", colors[cur_color]);
   };
 
   let volume_toggle = () => {
