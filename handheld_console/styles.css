@@ -10,6 +10,7 @@
 
     --corner: 60px;
     --screen: unset;
+    --border-style: 0%;
 }
 * {
     box-sizing: border-box;
@@ -18,6 +19,7 @@
 }
 body {
     background-color: #000;
+    overflow: hidden;
 }
 .container {
     background-color: var(--fg);
@@ -207,9 +209,10 @@ body {
     /* margin: 1px; */
 }
 .selected {
+    border-radius: var(--border-style);
     border: 6px double var(--sc);
-    
 }
+
 /* Guide */
 #guide {
     bottom: 0;

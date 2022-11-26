@@ -115,35 +115,54 @@ function main() {
     document.documentElement.style.setProperty(color_pointer, colors[cur_color]);
   };
 
-  let volume_point = () => {
+  let volume_toggle = () => {
     volume_state = volume_state? !volume_state: !volume_state
   };
-  volume.addEventListener("click", volume_point);
+  volume.addEventListener("click", volume_toggle);
 
   minus.addEventListener("click", () => color_pick("-"));
   plus.addEventListener("click", () => color_pick("+"));
+  
+  /////////////////////////////////////////////////////
+  // Border styler
+  let cur_style = 0;
+  let styles_list = ["0%", "100% 0%", "100%", "0% 100%"];
+  // let styles_list = ["0%", "100% 0% 0% 0%", "100% 0% 100% 0%", "100%", "0% 100% 0% 0%", "0% 100% 0% 100%", "0% 100%"];
+  let border_styler = () => {
+    // switch border radius of selector
+    if (cur_style >= styles_list.length - 1) cur_style = 0;
+    else cur_style++;
+    document.documentElement.style.setProperty("--border-style", styles_list[cur_style])
+  };
+  x.addEventListener("click", ()=> border_styler())
 
   // key events
   nintendo.focus();
   nintendo.addEventListener("keydown", (e) => {
     switch (e.key) {
-      case "w":
+      case "ArrowUp":
         movePixel("up");
         break;
-      case "d":
+      case "ArrowRight":
         movePixel("right");
         break;
-      case "s":
+      case "ArrowDown":
         movePixel("down");
         break;
-      case "a":
+      case "ArrowLeft":
         movePixel("left");
         break;
-      case "1":
+      case "q":
         color_pick("-");
         break;
-      case "2":
+      case "e":
         color_pick("+");
+        break;
+      case "r":
+        volume_toggle();
+        break;
+      case "w":
+        border_styler();
         break;
     }
   });
