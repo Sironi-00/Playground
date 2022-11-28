@@ -148,7 +148,7 @@ function main() {
     else if (pulse_rate > 0.6) pulse_rate = 0;
     document.documentElement.style.setProperty("--pulse-freq", `${pulse_rate}s`);
   }
-  screen.addEventListener("click", ()=> pulse_freq());
+  s.addEventListener("click", ()=> pulse_freq());
   // key events
   nintendo.focus();
   nintendo.addEventListener("keydown", (e) => {
