@@ -51,7 +51,7 @@ function main() {
       power_state = !power_state;
     }
   };
-  power.addEventListener("click", power_toggle);
+  power.addEventListener("click", ()=> power_toggle());
 
   //////////////////////////////
   // pixels selector axis
@@ -96,10 +96,10 @@ function main() {
     pix[pix_x].classList.toggle("selected");
   };
   // Dpad btn to move pixel
-  up.addEventListener("click", () => movePixel("up"));
-  right.addEventListener("click", () => movePixel("right"));
-  down.addEventListener("click", () => movePixel("down"));
-  left.addEventListener("click", () => movePixel("left"));
+  up.addEventListener("click", ()=> movePixel("up"));
+  right.addEventListener("click", ()=> movePixel("right"));
+  down.addEventListener("click", ()=> movePixel("down"));
+  left.addEventListener("click", ()=> movePixel("left"));
 
   /////////////////////////////
   // color switch toggle
