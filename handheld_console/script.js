@@ -102,28 +102,30 @@ function main() {
   left.addEventListener("click", () => movePixel("left"));
 
   /////////////////////////////
+  // color switch toggle
+  let volume_state = true;
+  let volume_toggle = () => {
+    volume_state = volume_state? !volume_state: !volume_state
+  };
   // color changer
   let cur_color = 0;
   let colors = ["#FFF", "#F00", "#0F0", "#00F", "#000"];
-  let volume_state = true;
+  
   let color_pick = (sign) => {
     // changes color of border
     if ((cur_color <= 0) & (sign == "-")) cur_color = colors.length - 1;
     else if ((cur_color >= colors.length - 1) & (sign == "+")) cur_color = 0;
     else sign == "+" ? cur_color++ : cur_color--;
+    // switch pointer of color switcher
     let color_pointer = volume_state? "--border-color": "--selector-color"
     document.documentElement.style.setProperty(color_pointer, colors[cur_color]);
     // change screen bg with border color change
     if (color_pointer=="--border-color") document.documentElement.style.setProperty("--screen-bg", colors[cur_color])
   };
-  // color switch toggle
-  let volume_toggle = () => {
-    volume_state = volume_state? !volume_state: !volume_state
-  };
-  volume.addEventListener("click", volume_toggle);
+  volume.addEventListener("click", ()=> volume_toggle());
 
-  minus.addEventListener("click", () => color_pick("-"));
-  plus.addEventListener("click", () => color_pick("+"));
+  minus.addEventListener("click", ()=> color_pick("-"));
+  plus.addEventListener("click", ()=> color_pick("+"));
   
   /////////////////////////////////////////////////////
   // Border styler
@@ -138,7 +140,7 @@ function main() {
   };
   x.addEventListener("click", ()=> border_styler())
   ///////////////////////////////////
-  // Pulse
+  // Pulse effect
   let pulse_rate = 0;
   let pulse_freq = () => {
     pulse_rate += 0.3;
@@ -146,24 +148,29 @@ function main() {
     else if (pulse_rate > 0.6) pulse_rate = 0;
     document.documentElement.style.setProperty("--pulse-freq", `${pulse_rate}s`);
   }
-  screen.addEventListener("click", pulse_freq);
+  screen.addEventListener("click", ()=> pulse_freq());
   // key events
   nintendo.focus();
   nintendo.addEventListener("keydown", (e) => {
+    // keyboard btn listener
     switch (e.key) {
       case "1":
         power_toggle();
         break;
       case "ArrowUp":
+        e.preventDefault();
         movePixel("up");
         break;
       case "ArrowRight":
+        e.preventDefault();
         movePixel("right");
         break;
       case "ArrowDown":
+        e.preventDefault();
         movePixel("down");
         break;
       case "ArrowLeft":
+        e.preventDefault();
         movePixel("left");
         break;
       case "q":
@@ -180,6 +187,8 @@ function main() {
         break;
       case "s":
         pulse_freq();
+        break;
+      default:
         break;
     }
   });

@@ -21,7 +21,6 @@
 }
 body {
     background-color: #000;
-    overflow: hidden;
 }
 .container {
     background-color: var(--fg);
