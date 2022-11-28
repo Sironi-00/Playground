@@ -13,6 +13,7 @@
     --screen: unset;
     --border-style: 0%;
     --pulse-freq: 0s;
+    --trasnf: none;
 }
 * {
     box-sizing: border-box;
@@ -212,13 +213,36 @@ body {
 .selected {
     border-radius: var(--border-style);
     border: 6px double var(--border-color);
-    animation: pulse var(--pulse-freq) linear infinite;
+    animation: pulse var(--pulse-freq) 0.3s linear infinite;
+    transform: var(--transf);
 }
 @keyframes pulse {
+    /*Heilung - Traust (drum drum chi-chi*/
     from, to {
     }
-    50% {
+    10% {
+        scale: 1;
+    }
+    20% {
         scale: 0;
+    }
+    30% {
+        scale: 1;
+    }
+    40% {
+        scale: 0;
+    }
+    50% {
+        scale: 1;
+    }
+    70% {
+        scale: 1;
+    }
+    80% {
+        scale: 0;
+    }
+    90% {
+        scale: 1;
     }
 }
 /* Guide */

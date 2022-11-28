@@ -103,9 +103,9 @@ function main() {
 
   /////////////////////////////
   // color switch toggle
-  let volume_state = true;
-  let volume_toggle = () => {
-    volume_state = volume_state? !volume_state: !volume_state
+  let sc_color_state = true;
+  let sc_color_toggle = () => {
+    sc_color_state = sc_color_state? !sc_color_state: !sc_color_state
   };
   // color changer
   let cur_color = 0;
@@ -117,12 +117,12 @@ function main() {
     else if ((cur_color >= colors.length - 1) & (sign == "+")) cur_color = 0;
     else sign == "+" ? cur_color++ : cur_color--;
     // switch pointer of color switcher
-    let color_pointer = volume_state? "--border-color": "--selector-color"
+    let color_pointer = sc_color_state? "--border-color": "--selector-color"
     document.documentElement.style.setProperty(color_pointer, colors[cur_color]);
     // change screen bg with border color change
     if (color_pointer=="--border-color") document.documentElement.style.setProperty("--screen-bg", colors[cur_color])
   };
-  volume.addEventListener("click", ()=> volume_toggle());
+  a.addEventListener("click", ()=> sc_color_toggle());
 
   minus.addEventListener("click", ()=> color_pick("-"));
   plus.addEventListener("click", ()=> color_pick("+"));
@@ -143,12 +143,24 @@ function main() {
   // Pulse effect
   let pulse_rate = 0;
   let pulse_freq = () => {
-    pulse_rate += 0.3;
-    if (pulse_rate < 0) pulse_rate = 0.6
-    else if (pulse_rate > 0.6) pulse_rate = 0;
+    pulse_rate += 1.1;
+    if (pulse_rate < 0) pulse_rate = 2.2
+    else if (pulse_rate > 2.2) pulse_rate = 0;
     document.documentElement.style.setProperty("--pulse-freq", `${pulse_rate}s`);
   }
   s.addEventListener("click", ()=> pulse_freq());
+
+  //////////////////////////////////////////////////
+  // Volume 
+  let scaled = false
+  let scale_hide = () => {
+    // switch pointer of color switcher
+    scaled = !scaled;
+    let scale_to = scaled ? "scale(0)" : "none"
+    document.documentElement.style.setProperty("--transf", scale_to)
+  }
+  volume.addEventListener("click", ()=> scale_hide())
+
   // key events
   nintendo.focus();
   nintendo.addEventListener("keydown", (e) => {
@@ -156,6 +168,9 @@ function main() {
     switch (e.key) {
       case "1":
         power_toggle();
+        break;
+        case "2":
+          scale_hide();
         break;
       case "ArrowUp":
         e.preventDefault();
@@ -179,15 +194,18 @@ function main() {
       case "e":
         color_pick("+");
         break;
-      case "r":
-        volume_toggle();
-        break;
-      case "w":
-        border_styler();
-        break;
-      case "s":
-        pulse_freq();
-        break;
+        case "w":
+          border_styler();
+          break;
+        case "d":
+          break;
+        case "s":
+          pulse_freq()
+          break;
+        case "a":
+          sc_color_toggle();
+          break;
+          
       default:
         break;
     }
