@@ -30,10 +30,10 @@ function main() {
   let down = document.getElementById("down");
   let left = document.getElementById("left");
   // Action btns
-  let x = document.getElementById("x");
+  let w = document.getElementById("w");
+  let d = document.getElementById("d");
+  let s = document.getElementById("s");
   let a = document.getElementById("a");
-  let b = document.getElementById("b");
-  let y = document.getElementById("y");
 
   ////////////////////////////////////
   // Screen Power
