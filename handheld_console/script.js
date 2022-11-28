@@ -138,7 +138,7 @@ function main() {
     else cur_style++;
     document.documentElement.style.setProperty("--border-style", styles_list[cur_style])
   };
-  x.addEventListener("click", ()=> border_styler())
+  w.addEventListener("click", ()=> border_styler())
   ///////////////////////////////////
   // Pulse effect
   let pulse_rate = 0;
