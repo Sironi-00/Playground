@@ -22,8 +22,8 @@ function main() {
   // face btns
   let minus = document.getElementById("minus");
   let plus = document.getElementById("plus");
-  let sysRec = document.getElementById("sys-rec");
-  let sysHome = document.getElementById("sys-home");
+  let rec = document.getElementById("sys-rec");
+  let home = document.getElementById("sys-home");
   // D-pad
   let up = document.getElementById("up");
   let right = document.getElementById("right");
@@ -213,6 +213,17 @@ function main() {
   }
   l_trigger.addEventListener("click", ()=> pattern_shift("-"));
   r_trigger.addEventListener("click", ()=> pattern_shift("+"));
+  /////////////////////////////////////////////////////////
+  // clear screen
+  let clear_patterns = () => {
+    let co = patterns[0]
+    for (let i = 0; i < co.length; i++) {
+      let point = co[i]
+      let pix = document.getElementsByClassName(`pixel r${point[0]}`);
+      pix[point[1]].classList.remove("selected");
+    }
+  }
+  home.addEventListener("click", ()=> clear_patterns())
 
   // key events
   nintendo.focus();
@@ -264,6 +275,12 @@ function main() {
         break;
       case "x":
         pattern_shift("+");
+        break;
+      case "i":
+        clear_patterns();
+        break;
+      case "o":
+        
         break;
       default:
         break;
