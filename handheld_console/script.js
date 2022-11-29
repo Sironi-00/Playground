@@ -46,7 +46,7 @@ function main() {
     let rm_tracker = () => {
       tracker.style.display = "none";
     } 
-    setTimeout(rm_tracker,5000)
+    setTimeout(rm_tracker, 4000)
   }
 
   ////////////////////////////////////
@@ -140,6 +140,7 @@ function main() {
     if (color_pointer == "--border-color") document.documentElement.style.setProperty("--screen-bg",colors[cur_color]);
     // Color Tracker
     let tracking = `Color: ${colors[cur_color]} in [${colors}]`
+    //let tracking = `Color: ${cur_color+1} in [${colors.length}]`
     track(tracking);
   };
   a.addEventListener("click", () => sc_color_toggle());
@@ -258,6 +259,7 @@ function main() {
       let pix = document.getElementsByClassName(`pixel r${point[0]}`);
       pix[point[1]].classList.remove("selected");
     }
+    track("Screen Cleared");
   };
   home.addEventListener("click", () => clear_patterns());
   ///////////////////////////////////////////
