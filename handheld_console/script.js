@@ -1,7 +1,7 @@
-// screen should desplay something
-// buttons have function
-// buttons mapped to keys
-// power button
+// screen should desplay something X
+// buttons have function X
+// buttons mapped to keys X
+// power button X
 // ? dettachable joycons
 
 // switch between R&B and B&W
@@ -159,7 +159,7 @@ function main() {
     else cur_style++;
     document.documentElement.style.setProperty("--border-style",styles_list[cur_style]);
     // pattern tracker
-    let tracking = `Border: ${cur_style+1}/${styles_list.length}`
+    let tracking = `Border: ${cur_style+1} / ${styles_list.length}`
     track(tracking);
   };
   w.addEventListener("click", () => border_styler());
@@ -235,9 +235,6 @@ function main() {
       let pix = document.getElementsByClassName(`pixel r${point_y}`);
       pix[point_x].classList.toggle("selected");
     }
-    // pattern tracker
-    let tracking = `Pattern: ${pattern_pos+1}/${patterns.length}`
-    track(tracking);
   };
   d.addEventListener("click", () => pre_pattern());
   ////////////////////////////////////
@@ -247,6 +244,9 @@ function main() {
     sign == "+" ? pattern_pos++ : pattern_pos--;
     if (pattern_pos < 0) pattern_pos = patterns.length - 1;
     else if (pattern_pos >= patterns.length) pattern_pos = 0;
+    // pattern tracker
+    let tracking = `Pattern: ${pattern_pos+1} of ${patterns.length}`
+    track(tracking);
   };
   l_trigger.addEventListener("click", () => pattern_shift("-"));
   r_trigger.addEventListener("click", () => pattern_shift("+"));
