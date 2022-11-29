@@ -13,7 +13,7 @@
     --screen: unset;
     --border-style: 0%;
     --pulse-freq: 0s;
-    --trasnf: none;
+    --trasnf: scale(0);
 }
 * {
     box-sizing: border-box;

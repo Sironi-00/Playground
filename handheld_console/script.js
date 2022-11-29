@@ -13,12 +13,12 @@ function main() {
   let power = document.getElementById("power");
   let volume = document.getElementById("volume");
   let screen = document.getElementById("screen");
-  // triggers
-  let lTrigger = document.getElementById("ltrigger");
-  let rTrigger = document.getElementById("rtrigger");
+  // _triggers
+  let l_trigger = document.getElementById("ltrigger");
+  let r_trigger = document.getElementById("rtrigger");
   // sticks
-  let lStick = document.getElementById("lstick");
-  let rStick = document.getElementById("rstick");
+  let l_stick = document.getElementById("lstick");
+  let r_stick = document.getElementById("rstick");
   // face btns
   let minus = document.getElementById("minus");
   let plus = document.getElementById("plus");
@@ -161,6 +161,59 @@ function main() {
   }
   volume.addEventListener("click", ()=> scale_hide())
 
+  ////////////////////////////////////////////////////
+  // pre set patterns
+  let pattern_pos = 0
+  let patterns = [[
+    [0,0],[0,1], [0,2],[0,3], [0,4],
+    [1,0],[1,1], [1,2],[1,3], [1,4],
+    [2,0],[2,1], [2,2],[2,3], [2,4],
+    [3,0],[3,1], [3,2],[3,3], [3,4],
+    [4,0],[4,1], [4,2],[4,3], [4,4]
+  ], [
+    [0,0], [0,2], [0,4],
+    [1,1], [1,3], 
+    [2,0], [2,2], [2,4],
+    [3,1], [3,3], 
+    [4,0], [4,2], [4,4]
+  ], [
+    [0,0], [0,4],
+    [1,1], [1,3], 
+     [2,2],
+    [3,1], [3,3], 
+    [4,0], [4,4]
+  ], [
+    [0,1], [0,2],[0,3],
+    [2,0], [2,2], [2,4],
+    [4,1], [4,2],[4,3]
+  ], [
+    [0,0], [0,4],
+    [1,2],
+    [2,1], [2,3],
+    [3,2],
+    [4,0], [4,4]
+  ]
+]
+  let pre_pattern = () => {
+    let co = patterns[pattern_pos]
+    for (let i = 0; i < co.length; i++) {
+      let point = co[i]
+      let pix = document.getElementsByClassName(`pixel r${point[0]}`);
+      pix[point[1]].classList.toggle("selected");
+    }
+  }
+  d.addEventListener("click", ()=> pre_pattern())
+  ////////////////////////////////////
+  // pattern matcher
+  let pattern_shift = (sign) => {
+    // changes the index pointing to a pattern
+    sign == "+" ? pattern_pos++:pattern_pos--
+    if (pattern_pos < 0) pattern_pos = patterns.length - 1 
+    else if (pattern_pos >= patterns.length) pattern_pos = 0
+  }
+  l_trigger.addEventListener("click", ()=> pattern_shift("-"));
+  r_trigger.addEventListener("click", ()=> pattern_shift("+"));
+
   // key events
   nintendo.focus();
   nintendo.addEventListener("keydown", (e) => {
@@ -198,6 +251,7 @@ function main() {
           border_styler();
           break;
         case "d":
+          pre_pattern();
           break;
         case "s":
           pulse_freq()
@@ -205,7 +259,12 @@ function main() {
         case "a":
           sc_color_toggle();
           break;
-          
+        case "z":
+        pattern_shift("-")
+        break;
+      case "x":
+        pattern_shift("+");
+        break;
       default:
         break;
     }
