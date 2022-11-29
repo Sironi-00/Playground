@@ -108,8 +108,9 @@ body {
 }
 .sign {    
     top: 10%;
-    width: 10%;
-    height: 2%;
+    width: 17%;
+    height: 3.4%;
+    background-color: var(--bg);
 }
 .left .sign {
     right: 20%;
