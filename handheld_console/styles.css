@@ -2,6 +2,7 @@
     --frame: #444;
     --bg: #000;
     --fg: #FFF;
+
     --selector-color: #00F;
     --border-color: #FFF;
     --screen-bg: #FFF;
@@ -253,13 +254,20 @@ body {
     height: 25%;
     padding: 1%;
     overflow-y: auto;
+    display: block;
 }
 #guide * {
     position: relative;
     border: 0;
 }
+#guide p {
+    padding-bottom: 8px;
+}
 #guide p span {
     font-weight: bold;
+}
+#guide p small {
+    background-color: #0002;
 }
 #toggle-guide {
     right: 0;
@@ -267,4 +275,24 @@ body {
     border: 0;
     padding: 4px 6px;
     box-shadow: 0 0 4px #000;
+}
+hr {
+    background: #0009;
+    height: 2px;
+    width: 100%;
+    margin: 2px 0;
+}
+#tracker {
+    top: 5%;
+    left: 15%;
+    height: max-content;
+    width: 70%;
+    padding: 4px;
+    display: none;
+    text-align: center;
+    z-index: 999;
+    background-color: #EEED;
+    color: #000;
+    border: 0;
+    border-radius: 12px;
 }
