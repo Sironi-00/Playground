@@ -325,7 +325,19 @@ function main() {
         break;
       default:
         break;
-    }
+    };
   });
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Guide - Hides or Display guide
+  let toggle_guide = document.getElementById("toggle-guide");
+  let guide_state = true;
+  let display_guide = () => {
+    let guide = document.getElementById("guide");
+    let temp = (guide_state) ? "none": "unset"; 
+    guide.style.display = temp;
+    guide_state = !guide_state;
+
+  }
+  toggle_guide.addEventListener("click", ()=> display_guide())
 }
 main();

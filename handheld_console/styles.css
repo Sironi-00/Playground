@@ -271,8 +271,10 @@ body {
     background-color: #0002;
 }
 #toggle-guide {
-    right: 0;
-    bottom: 0;
+    top: 2%;
+    right: 2%;
+    width: 8%;
+    height: 4%;
     border: 0;
     padding: 4px 6px;
     box-shadow: 0 0 4px #000;
