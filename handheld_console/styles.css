@@ -347,3 +347,7 @@ hr {
     color: #000;
     border-radius: 12px;
 }
+.inspiration {
+    display: flex;
+    justify-content: space-evenly;
+}
