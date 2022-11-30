@@ -322,11 +322,12 @@ body {
     background-color: #0002;
 }
 #toggle-guide {
-    top: 2%;
-    right: 2%;
+    top: 0%;
+    right: 0%;
     width: 8%;
     height: 4%;
     padding: 4px 6px;
+    z-index: -1;
 }
 hr {
     background: #0009;
@@ -351,3 +352,24 @@ hr {
     display: flex;
     justify-content: space-evenly;
 }
+/* Resposive */
+/*
+* {
+    visibility: hidden;
+}
+body, .frame, .frame *, #toggle-guide, #guide, #guide * {
+    visibility:visible;
+}
+body, #toggle-guide, #guide {
+    background-color: #eee;
+}
+.body {
+    width: fit-content;
+    height: 400px;
+}
+.frame {
+    width: 900px;
+    height: 385px;
+    top: 10px
+}
+*/
