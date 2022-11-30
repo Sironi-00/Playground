@@ -174,31 +174,43 @@ body {
     left: 0;
 }
 .icon {
-    position: relative;
-    top: 5px;
-    left: 5px;
     width: 0px;
     height: 0px;
+    --tri-size: 14px;
+    --tri-1: 8px;
+    --tri-2: 4px;
 }
 .iup {
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid var(--fg);
-    border-left: 15px solid transparent;
+    border-right: var(--tri-size) solid transparent;
+    border-bottom: var(--tri-size) solid var(--fg);
+    border-left: var(--tri-size) solid transparent;
+    
+    top: var(--tri-1);
+    left: var(--tri-2);
 }
 .irt {
-    border-top: 10px solid transparent;
-    border-left: 15px solid var(--fg);
-    border-bottom: 10px solid transparent;
+    border-top: var(--tri-size) solid transparent;
+    border-left: var(--tri-size) solid var(--fg);
+    border-bottom: var(--tri-size) solid transparent;
+
+    top: var(--tri-2);
+    right: var(--tri-1);
 }
 .idw {
-    border-right: 18px solid transparent;
-    border-top: 18px solid var(--fg);
-    border-left: 18px solid transparent;
+    border-right: var(--tri-size) solid transparent;
+    border-top: var(--tri-size) solid var(--fg);
+    border-left: var(--tri-size) solid transparent;
+
+    bottom: var(--tri-1);
+    left: var(--tri-2);
 }
 .ilt {
-    border-top: 10px solid transparent;
-    border-right: 15px solid var(--fg);
-    border-bottom: 10px solid transparent;
+    border-top: var(--tri-size) solid transparent;
+    border-right: var(--tri-size) solid var(--fg);
+    border-bottom: var(--tri-size) solid transparent;
+
+    top: var(--tri-2);
+    left: var(--tri-1);
 }
 .left .button.system {
     top: 80%;
