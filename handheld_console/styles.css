@@ -35,35 +35,38 @@ body {
     margin: auto;
     position: relative;
     text-align: center;
-    border: 0;
     color: var(--left-con);
     text-shadow: 2px 2px 0 var(--right-con);
 }
 .container * {
     position: absolute;
-    border: 4px solid var(--bg);
 }
 .frame {
+    border: 4px solid var(--bg);
     background: var(--frame);
     width: 90%;
     height: 55%;
     top: 15%;
     left: 5%;
     border-radius: var(--corner);
+    box-shadow: 0 0 5px #000;
 }
 .joycon {
     width: 20%;
     height: 102%;
     top: -1%;
     z-index: 1;
+    box-shadow: inset 0 0 25px #0009;
 }
 .joycon.left {
     background: var(--left-con);
+    border-right: 4px solid var(--bg);
     border-radius: var(--corner) 0 0 var(--corner);
     left: -1%;
 }
 .joycon.right {
     background: var(--right-con);
+    border-left: 4px solid var(--bg);
     border-radius: 0 var(--corner) var(--corner) 0;
     right: -1%;
 }
@@ -72,7 +75,7 @@ body {
     height: 15%;
     top: -3%;
     background: var(--frame);
-    border: 0;
+    box-shadow: inset 0 0 8px #000;
 }
 .left.trigger {
     left: -1.2%;
@@ -96,7 +99,6 @@ body {
     top: -2%;
     left: 27%;
     z-index: 1;
-    border: 0;
     border-radius: 10%;
     border-top: 2px  solid var(--bg);
     border-left: 35px  solid var(--bg);
@@ -124,6 +126,7 @@ body {
     border-radius: 50%;
     background-color: var(--bg);
     border: 6px solid var(--fg);
+    box-shadow: 0 0 8px #000;
 }
 .left .stick {
     top: 20%;
@@ -136,7 +139,6 @@ body {
 .fourway-btn {
     width: max(5vw, 110px);
     height: max(5vw, 110px);
-    border: 0;
 }
 .left .fourway-btn {
     top: 50%;
@@ -154,6 +156,7 @@ body {
     width: 40px;
     height: 40px;
     text-align: center;
+    box-shadow: 0 0 4px #000;
 }
 .fourway-btn .up {
     top: 0;
@@ -187,6 +190,7 @@ body {
     border: 10px solid var(--bg);
     background-color: var(--screen-bg);
     transition: background-color 0.5s;
+    box-shadow: inset 0 0 12.5px #000;
 }
 .screen * {
     display: var(--screen);
@@ -196,11 +200,9 @@ body {
     width: 99.6%;
     height: 99.4%;
     margin: 0.2%;
-    border: 0;
 }
 .stage * {
     position: relative;
-    border: 0;
 }
 .row {
     width: 100%;
@@ -256,10 +258,10 @@ body {
     padding: 1%;
     overflow-y: auto;
     display: block;
+    border: 2px solid var(--bg);
 }
 #guide * {
     position: relative;
-    border: 0;
 }
 #guide p {
     padding-bottom: 8px;
@@ -275,7 +277,6 @@ body {
     right: 2%;
     width: 8%;
     height: 4%;
-    border: 0;
     padding: 4px 6px;
     box-shadow: 0 0 4px #000;
 }
@@ -296,6 +297,5 @@ hr {
     z-index: 999;
     background-color: #EEED;
     color: #000;
-    border: 0;
     border-radius: 12px;
 }
