@@ -176,9 +176,12 @@ body {
 .icon {
     width: 0px;
     height: 0px;
-    --tri-size: 14px;
+    /* --tri-size: 14px;
     --tri-1: 8px;
-    --tri-2: 4px;
+    --tri-2: 4px; */
+    --tri-size: 12px;
+    --tri-1: 10px;
+    --tri-2: 6px;
 }
 .iup {
     border-right: var(--tri-size) solid transparent;
