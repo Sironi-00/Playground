@@ -307,7 +307,8 @@ body {
     height: 25%;
     padding: 1%;
     overflow-y: auto;
-    display: block;
+    /* display: block; */
+    display: none;
     border: 2px solid var(--bg);
 }
 #guide * {
@@ -356,6 +357,7 @@ hr {
 
 * {
     visibility: hidden;
+    border: 2px solid lime;
 }
 body, .frame, .frame *, #toggle-guide, #guide, #guide * {
     visibility:visible;
@@ -363,16 +365,20 @@ body, .frame, .frame *, #toggle-guide, #guide, #guide * {
 body, #toggle-guide, #guide {
     background-color: #eee;
 }
-.body {
-    width: fit-content;
-    height: 400px;
+body {
+    height: 450px;
 }
 .frame {
     width: 900px;
     height: 385px;
-    top: 10px
+    top: 0px;
+    right: 2%;
 }
 #toggle-guide {
     top: 0%;
-    right: -4%;
+    right: 40%;
+}
+#guide {
+    top: 25px;
+    z-index: 3;
 }
