@@ -53,11 +53,11 @@ function main() {
   // Screen Power
   let power_state = true;
   let power_toggle = () => {
-    track(power_state ? "OFF": "ON")
     // remove screen elements by setting visibility to none or restore screen elements visibitlity
     document.documentElement.style.setProperty("--screen", power_state ? "none" : "unset");
     screen.style.background = power_state?" #000": "";
     power_state = !power_state;
+    track(power_state ? "Power OFF": "Power ON")
   };
   power.addEventListener("click", () => power_toggle());
 
@@ -179,7 +179,7 @@ function main() {
     scaled = !scaled;
     let scale_to = scaled ? "scale(0)" : "none";
     document.documentElement.style.setProperty("--transf", scale_to);
-    track(scaled ? "Hidden": "Visible")
+    track(scaled ? "Selector Hidden": "Selector Visible")
   };
   volume.addEventListener("click", () => scale_hide());
 
