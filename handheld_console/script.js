@@ -53,17 +53,11 @@ function main() {
   // Screen Power
   let power_state = true;
   let power_toggle = () => {
-    if (power_state) {
-      screen.style.background = "#000";
-      // remove screen elements by setting visibility to none
-      document.documentElement.style.setProperty("--screen", "none");
-      power_state = !power_state;
-    } else {
-      screen.style.background = "";
-      // resets screen elements
-      document.documentElement.style.setProperty("--screen", "unset");
-      power_state = !power_state;
-    }
+    track(power_state ? "OFF": "ON")
+    // remove screen elements by setting visibility to none or restore screen elements visibitlity
+    document.documentElement.style.setProperty("--screen", power_state ? "none" : "unset");
+    screen.style.background = power_state?" #000": "";
+    power_state = !power_state;
   };
   power.addEventListener("click", () => power_toggle());
 
@@ -134,7 +128,7 @@ function main() {
     else if ((cur_color >= colors.length - 1) & (sign == "+")) cur_color = 0;
     else sign == "+" ? cur_color++ : cur_color--;
     // switch pointer of color switcher
-    let color_pointer = sc_color_state ? "--border-color" : "--selector-color";
+    let color_pointer = sc_color_state ? "--selector-color" : "--border-color";
     document.documentElement.style.setProperty(color_pointer,colors[cur_color]);
     // change screen bg with border color change
     if (color_pointer == "--border-color") document.documentElement.style.setProperty("--screen-bg",colors[cur_color]);
@@ -185,6 +179,7 @@ function main() {
     scaled = !scaled;
     let scale_to = scaled ? "scale(0)" : "none";
     document.documentElement.style.setProperty("--transf", scale_to);
+    track(scaled ? "Hidden": "Visible")
   };
   volume.addEventListener("click", () => scale_hide());
 

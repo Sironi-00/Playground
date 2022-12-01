@@ -243,7 +243,7 @@ body {
 }
 .screen * {
     display: var(--screen);
-    transition: all 0.5s;
+    transition: all 0.75s;
 }
 .stage {
     width: 99.6%;
@@ -268,6 +268,7 @@ body {
     border: 6px double var(--border-color);
     animation: pulse var(--pulse-freq) 0.3s linear infinite;
     transform: var(--transf);
+    box-shadow: 0 0 4px #000;
 }
 @keyframes pulse {
     /*Heilung - Traust (drum drum chi-chi*/
@@ -322,12 +323,11 @@ body {
     background-color: #0002;
 }
 #toggle-guide {
-    top: 0%;
-    right: 0%;
+    top: 0.5%;
+    right: 0.5%;
     width: 8%;
     height: 4%;
     padding: 4px 6px;
-    z-index: -1;
 }
 hr {
     background: #0009;
