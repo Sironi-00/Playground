@@ -353,7 +353,7 @@ hr {
     justify-content: space-evenly;
 }
 /* Resposive */
-/*
+
 * {
     visibility: hidden;
 }
@@ -372,4 +372,7 @@ body, #toggle-guide, #guide {
     height: 385px;
     top: 10px
 }
-*/
+#toggle-guide {
+    top: 0%;
+    right: -4%;
+}
