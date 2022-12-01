@@ -46,7 +46,7 @@ body {
     background: var(--frame);
     width: 90%;
     height: 55%;
-    top: 15%;
+    top: 12.5%;
     left: 5%;
     border-radius: var(--corner);
     box-shadow: 0 0 5px #000;
@@ -307,7 +307,6 @@ body {
     height: 25%;
     padding: 1%;
     overflow-y: auto;
-    /* display: block; */
     /* display: none; */
     border: 2px solid var(--bg);
 }
@@ -352,45 +351,4 @@ hr {
 .inspiration {
     display: flex;
     justify-content: space-evenly;
-}
-#view-prefer {
-    position: relative;
-    text-align: center;
-    margin: auto;
-    color: #333;
-    font-weight: bolder
-}
-/* Resposive */
-
-* {
-    visibility: hidden;
-}
-body, .frame, .frame *, #toggle-guide, #guide, #guide *, #view-prefer {
-    visibility:visible;
-}
-body, #toggle-guide, #guide {
-    background-color: #eee;
-}
-body {
-    height: 450px;
-}
-.container {
-    margin: 0;
-}
-.frame {
-    width: 900px;
-    height: 385px;
-    top: 12px;
-    right: 2%;
-}
-#toggle-guide {
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    padding: 0px;
-}
-#guide {
-    top: 5%;
-    z-index: 3;
-    height: 300px;
 }
