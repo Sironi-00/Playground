@@ -357,7 +357,9 @@ hr {
 
 * {
     visibility: hidden;
-    border: 2px solid lime;
+}
+.container {
+    margin: 0;
 }
 body, .frame, .frame *, #toggle-guide, #guide, #guide * {
     visibility:visible;
@@ -376,9 +378,12 @@ body {
 }
 #toggle-guide {
     top: 0%;
-    right: 40%;
+    left: 45%;
+    z-index: 1;
+    padding: 0px;
 }
 #guide {
-    top: 25px;
+    top: 5%;
     z-index: 3;
+    height: 300px;
 }
