@@ -15,8 +15,6 @@
     --border-style: 0%;
     --pulse-freq: 0s;
     --trasnf: scale(0);
-    --l-stick-axis: 0% 0%;
-    --r-stick-axis: 0% 0%;
 }
 * {
     box-sizing: border-box;
