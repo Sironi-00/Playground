@@ -258,32 +258,6 @@ function main() {
     track("Screen Cleared");
   };
   home.addEventListener("click", () => clear_patterns());
-  /////////////////////////////////////////////////////////////////////
-  // Sticks 
-  let move_stick = (event, hand) => {
-    setTimeout(()=>{console.log(`Mouse: X = [${event.pageX}],  Y = [${event.pageY}]`);}, 2000)
-    console.log(`Mouse: X = [${event.pageX}],  Y = [${event.pageY}]`);
-
-    // get position of event on div
-    let stick_x = event.pageX
-    let stick_y = event.pageY
-    // X and Y after calc (for positioning) 
-    // 
-    let stick_mid_x = 272;
-    let stick_mid_y = 225;
-    // 0% > 50%%
-    let to_x = (stick_x > stick_mid_x + 20) ? "50%" : (stick_x < stick_mid_x - 20) ? "-50%" : "0%";
-    let to_y = (stick_y > stick_mid_y + 20) ? "50%" : (stick_y < stick_mid_y - 20) ? "-50%" : "0%";
-    
-    // hand should be l or r
-    document.documentElement.style.setProperty(`--${hand}-stick-axis`, `${to_x} ${to_y}`)
-    let return_stick = () => {
-      document.documentElement.style.setProperty(`--${hand}-stick-axis`, `0% 0%`);
-    } 
-    setTimeout(return_stick, 1000)
-  }
-  l_stick.addEventListener("mouseover", (e)=> move_stick(e, "l"))
-  // r_stick.addEventListener("mouseover", (e)=> move_stick(e, "r"))
   
   // key events
   nintendo.focus();

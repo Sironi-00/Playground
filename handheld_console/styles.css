@@ -142,10 +142,33 @@ body {
     background: var(--frame);
     box-shadow: inset 0 0 8px 4px #222, 0 0 8px #000;
 }
+.stick:hover {
+    animation: spin 5s linear 700ms infinite;
+}
+@keyframes spin {
+    from {
+    }
+    0% {
+        translate: 0 -25%;
+    }
+    25% {
+        translate: 25% 0;
+    }
+    50% {
+        translate: 0 25%;
+    }
+    75% {
+        translate: -25% 0;
+    }
+    100% {
+        translate: 0 -25%;
+    }
+}
+
 .left .stick {
     top: 20%;
     left: 25%;
-    translate: var(--l-stick-axis);
+    
 }
 .right .stick {
     top: 55%;
