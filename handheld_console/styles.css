@@ -29,7 +29,7 @@ body {
 .container {
     background-color: var(--fg);
     width: 1000px;
-    height: 500px;
+    height: 700px;
     margin: 25px auto;
     position: relative;
 }
