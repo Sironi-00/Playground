@@ -15,6 +15,8 @@
     --border-style: 0%;
     --pulse-freq: 0s;
     --trasnf: scale(0);
+    --l-stick-axis: 0% 0%;
+    --r-stick-axis: 0% 0%;
 }
 * {
     box-sizing: border-box;
@@ -145,10 +147,12 @@ body {
 .left .stick {
     top: 20%;
     left: 25%;
+    translate: var(--l-stick-axis);
 }
 .right .stick {
     top: 55%;
     right: 25%;
+    translate: var(--r-stick-axis);
 }
 .fourway-btn {
     width: 110px;
