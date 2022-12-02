@@ -29,7 +29,7 @@ body {
 .container {
     background-color: var(--fg);
     width: 1000px;
-    height: 700px;
+    height: 500px;
     margin: 25px auto;
     position: relative;
 }
@@ -43,9 +43,6 @@ body {
     color: var(--left-con);
     text-shadow: 2px 2px 0 var(--right-con);
 }
-.container #device-pref {
-    font-size: 75%; 
-}
 .container * {
     position: absolute;
 }
@@ -54,7 +51,8 @@ body {
     background: var(--frame);
     width: 90%;
     height: 55%;
-    top: 12.5%;
+    height: 385px;
+    top: 85px;
     left: 5%;
     border-radius: var(--corner);
     box-shadow: 0 0 5px #000;
@@ -335,9 +333,8 @@ body {
 }
 #toggle-guide {
     top: 1%;
-    right: 2%;
-    width: max-content;
-    height: 4%;
+    right: 1%;
+    width: 90px;
     padding: 4px 6px;
 }
 hr {

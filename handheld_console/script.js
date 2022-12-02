@@ -352,8 +352,9 @@ function main() {
   let guide_state = true;
   let display_guide = () => {
     let guide = document.getElementById("guide");
-    let temp = (guide_state) ? "none": "unset"; 
-    guide.style.display = temp;
+    guide.style.display = (guide_state) ? "none": "unset"; 
+    let cont = document.getElementsByClassName("container");
+    cont[0].style.height = (guide_state) ? "500px": "700px"; 
     guide_state = !guide_state;
 
   }
