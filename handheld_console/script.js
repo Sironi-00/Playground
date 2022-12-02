@@ -57,7 +57,7 @@ function main() {
     document.documentElement.style.setProperty("--screen", power_state ? "none" : "unset");
     screen.style.background = power_state?" #000": "";
     power_state = !power_state;
-    track(power_state ? "Power OFF": "Power ON")
+    track(power_state ? "Power 0N)": "Power OFF");
   };
   power.addEventListener("click", () => power_toggle());
 
