@@ -353,8 +353,9 @@ body {
     background-color: #0002;
 }
 #toggle-guide {
-    bottom: 1%;
-    right: 1%;
+    /* bottom: 1%; */
+    top: 475px;
+    right: 0%;
     width: 90px;
     padding: 4px 6px;
 }
