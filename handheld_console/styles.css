@@ -31,6 +31,9 @@ body {
     margin: 25px auto;
     position: relative;
 }
+.container * {
+    position: absolute;
+}
 .container header, .container header * {
     width: 100%;
     margin: auto;
@@ -40,9 +43,6 @@ body {
 .container h1 {
     color: var(--left-con);
     text-shadow: 2px 2px 0 var(--right-con);
-}
-.container * {
-    position: absolute;
 }
 .frame {
     border: 4px solid var(--bg);
@@ -353,8 +353,7 @@ body {
     background-color: #0002;
 }
 #toggle-guide {
-    /* bottom: 1%; */
-    top: 475px;
+    bottom: 1%;
     right: 0%;
     width: 90px;
     padding: 4px 6px;
