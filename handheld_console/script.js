@@ -225,10 +225,10 @@ function main() {
   ];
   let pre_pattern = () => {
     // pattern as an inner array
-    let co = patterns[pattern_pos];
-    for (let i = 0; i < co.length; i++) {
-      let point_x = co[i][1]
-      let point_y = co[i][0]
+    let pattern_arr = patterns[pattern_pos];
+    for (let i = 0; i < pattern_arr.length; i++) {
+      let point_x = pattern_arr[i][1]
+      let point_y = pattern_arr[i][0]
       let pix = document.getElementsByClassName(`pixel r${point_y}`);
       pix[point_x].classList.toggle("selected");
     }
@@ -250,16 +250,59 @@ function main() {
   /////////////////////////////////////////////////////////
   // clear screen
   let clear_patterns = () => {
-    let co = patterns[0];
-    for (let i = 0; i < co.length; i++) {
-      let point = co[i];
-      let pix = document.getElementsByClassName(`pixel r${point[0]}`);
-      pix[point[1]].classList.remove("selected");
+    // Pattern with every block
+    let pattern_arr = patterns[0];
+    for (let i = 0; i < pattern_arr.length; i++) {
+      let point_x = pattern_arr[i][1]
+      let point_y = pattern_arr[i][0]
+      let pix = document.getElementsByClassName(`pixel r${point_y}`);
+      pix[point_x].classList.remove("selected");
     }
+    loc_save_state = false;
     track("Screen Cleared");
   };
   home.addEventListener("click", () => clear_patterns());
   
+  /////////////////////////////////////////////////////////////////
+  // save to local
+  let local_arr;
+  let local_pattern = (post) => {
+    // Scanning active pattern
+    let local_save = () => {
+      let pattern_arr = patterns[0];
+      let to_arr = []
+      for (let i = 0; i < pattern_arr.length; i++) {
+        let point_x = pattern_arr[i][1]
+        let point_y = pattern_arr[i][0]
+        let pix = document.getElementsByClassName(`pixel r${point_y}`);
+        let e_classes = pix[point_x].className.split(" ");
+        if (e_classes[2] == "selected") to_arr.push([point_y, point_x])
+      }
+      localStorage.setItem(local_arr, JSON.stringify(to_arr));
+      track("Pattern Saved");
+    }
+    let local_load = () => {
+      // gets local arr of selected
+      let save_arr = JSON.parse(localStorage.getItem(local_arr))
+      if ((save_arr != true) || save_arr.length <= 0) return track("Pattern Not Loaded");
+      for (let i = 0; i < save_arr.length; i++) {
+        let point_x = save_arr[i][1]
+        let point_y = save_arr[i][0]
+        let pix = document.getElementsByClassName(`pixel r${point_y}`);
+        pix[point_x].classList.toggle("selected");
+      } 
+      track("Pattern Loaded");
+    }
+    let local_rm = () => {
+      console.log(localStorage)
+      localStorage.clear()
+    }
+    (post == "save") ? local_save() : (post == "load") ? local_load() : local_rm()
+  }
+  l_stick.addEventListener("click", ()=> local_pattern("save"))
+  r_stick.addEventListener("click", ()=> local_pattern("load"))
+  rec.addEventListener("click", ()=> local_pattern("remove"))
+
   // key events
   nintendo.focus();
   nintendo.addEventListener("keydown", (e) => {
@@ -315,7 +358,13 @@ function main() {
         clear_patterns();
         break;
       case "i":
-        console.log("coming soon");
+        local_pattern("remove");
+        break;
+      case "k":
+        local_pattern("save");
+        break;
+      case "l":
+        local_pattern("load");
         break;
       default:
         break;
