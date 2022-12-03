@@ -284,7 +284,11 @@ function main() {
     let local_load = () => {
       // gets local arr of selected
       let save_arr = JSON.parse(localStorage.getItem(local_arr))
-      if ((save_arr != true) || save_arr.length <= 0) return track("Pattern Not Loaded");
+      try {
+        if (save_arr.length <= 0) return track("Pattern Not Loaded");
+      } catch (TypeError) { 
+        return track("No pattern to load: Save Pattern before loading")
+      }
       for (let i = 0; i < save_arr.length; i++) {
         let point_x = save_arr[i][1]
         let point_y = save_arr[i][0]
@@ -295,7 +299,8 @@ function main() {
     }
     let local_rm = () => {
       console.log(localStorage)
-      localStorage.clear()
+      localStorage.clear();
+      track("Memory Cleared");
     }
     (post == "save") ? local_save() : (post == "load") ? local_load() : local_rm()
   }
