@@ -158,14 +158,14 @@ function main() {
     track(tracking);
   };
   w.addEventListener("click", () => border_styler());
-  
+
   ///////////////////////////////////
   // Pulse effect
   let pulse_rate = 0;
   let pulse_freq = () => {
-    pulse_rate += 1.2;
-    if (pulse_rate < 0) pulse_rate = 2.4;
-    else if (pulse_rate > 2.4) pulse_rate = 0;
+    pulse_rate += 1.1;
+    if (pulse_rate < 0) pulse_rate = 2.2;
+    else if (pulse_rate > 2.2) pulse_rate = 0;
     document.documentElement.style.setProperty(
       "--pulse-freq",
       `${pulse_rate}s`
