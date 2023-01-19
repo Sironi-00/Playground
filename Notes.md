@@ -7,3 +7,5 @@ Cocktail Village's silver tile flipper
 Periodic table
 
 spinning Planets
+
+//document.getElementById("screen").innerHTML = `<object type="text/html" data="./main.html"></object>`
