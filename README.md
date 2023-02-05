@@ -1,18 +1,18 @@
 # Playground
 - Pure Web experiments
 
-#https://sironi-00.github.io/Playground/crud/
-- Fullscreen web page
+### Fullscreen web page
+- https://sironi-00.github.io/Playground/crud/
 
-#https://sironi-00.github.io/Playground/isDots/
-- Cube grid that have eventListiner
+### Cube grid that have eventListiner
+- https://sironi-00.github.io/Playground/isDots/
 
-#https://sironi-00.github.io/Playground/circlelic/
-- Moving circles with css animation +++
+### Moving circles with css animation +++
+- https://sironi-00.github.io/Playground/circlelic/
 
-#https://sironi-00.github.io/Playground/green/
-- A web page demo
+### A web page demo
+- https://sironi-00.github.io/Playground/green/
 
-#https://sironi-00.github.io/Playground/handheld_console/
-- Nintendo Switch look alike web page with some functionality
+### Nintendo Switch look alike web page with some functionality
+- https://sironi-00.github.io/Playground/handheld_console/
 
