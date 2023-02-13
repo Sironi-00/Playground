@@ -17,4 +17,4 @@
 - https://sironi-00.github.io/Playground/handheld_console/
 
 ### Web page shelf > Made with css grid
-- https://sironi-00.github.io/Playground/web-shelf/
+- https://sironi-00.github.io/Playground/web_shelf/
