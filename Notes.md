@@ -9,3 +9,9 @@ Periodic table
 spinning Planets
 
 //document.getElementById("screen").innerHTML = `<object type="text/html" data="./main.html"></object>`
+
+#creates a 3D text effect
+h1 {
+    color: Teal;
+    text-shadow: 1px 1px 0px white, 2px 2px 0 black;
+}
