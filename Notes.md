@@ -15,3 +15,6 @@ h1 {
     color: Teal;
     text-shadow: 1px 1px 0px white, 2px 2px 0 black;
 }
+
+# 3D edges
+box-shadow: 0 0 0.25rem #000, inset 0 0 0.5rem #0008;
